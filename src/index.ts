@@ -44,6 +44,7 @@ function scheduleMessage() {
 }
 
 function sendMessage() {
+    const now = new Date();
     const channel = client.channels.cache.get(channelId);
-    (channel as TextChannel).send('@here Daily : Co dzisiaj zrobiliście?');
+    (channel as TextChannel).send(`@here Daily ${now.getDay()}.${now.getMonth()+1} : Co dzisiaj zrobiliście?`);
 }
