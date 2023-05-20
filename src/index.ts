@@ -24,7 +24,7 @@ client.login(config.DISCORD_TOKEN);
 
 function scheduleMessage() {
     const now = new Date();
-    const targetTime:any = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 0, 0);
+    const targetTime:any = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 0, 0); // 19:00 UTC = 21:00 in Poland
     const timeUntilTarget = targetTime.getTime() - now.getTime();
     if (timeUntilTarget < 0) {
         // If the target time has already passed today set target date for tomorrow
