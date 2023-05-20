@@ -31,7 +31,7 @@ function scheduleMessage() {
         targetTime.setDate(targetTime.getDate() + 1);
     }
    // const timeUntilNextDay = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-
+    console.log("working");
     setTimeout(() => {
         sendMessage();
         scheduleMessage();
