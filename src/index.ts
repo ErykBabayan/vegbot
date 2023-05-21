@@ -30,21 +30,17 @@ function scheduleMessage() {
         // If the target time has already passed today set target date for tomorrow
         targetTime.setDate(targetTime.getDate() + 1);
     }
-   // const timeUntilNextDay = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
     console.log("working");
     setTimeout(() => {
         sendMessage();
         scheduleMessage();
     }, targetTime.getTime() - now.getTime());
 
-    // setTimeout(() => {
-    //     sendMessage();
-    //     scheduleMessage();
-    // }, timeUntilNextDay);
 }
 
 function sendMessage() {
     const now = new Date();
     const channel = client.channels.cache.get(channelId);
-    (channel as TextChannel).send(`@here Daily ${now.getDay()}.${now.getMonth()+1} : Co dzisiaj zrobiliście?`);
+    (channel as TextChannel).send(`@here Daily ${now.getDate()}.${now.getMonth()+1} : Co dzisiaj zrobiliście?`);
 }
